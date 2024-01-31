@@ -9,9 +9,4 @@ class RestController {
     fun test(): String {
         return "test"
     }
-
-    @GetMapping("/test2")
-    fun test2(): String {
-        return "test2 ㅎㅎ"
-    }
 }
