@@ -9,8 +9,8 @@ WORKDIR $WORK
 
 RUN apt-get update && apt-get install -y dos2unix
 RUN dos2unix gradlew
-RUN ./gradlew clean
-RUN ./gradlew bootJar
+RUN gradlew clean
+RUN gradlew bootJar
 
 FROM bellsoft/liberica-openjdk-debian:17
 
