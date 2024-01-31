@@ -1,0 +1,49 @@
+server:
+  port: 9090
+
+spring:
+  graphql:
+    graphiql.enabled: true
+    schema.printer.enabled: true
+    thymeleaf:
+      prefix: classpath:/templates/
+      suffix: html
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      org:
+        hibernate:
+          format_sql: true
+          envers:
+            revision_field_name: rev_id
+            audit_table_suffix: _histories
+            modified_flag_suffix: _modified
+            store_data_at_delete: true
+      hibernate:
+        default_batch_fetch_size: 100
+        show_sql: false
+        format_sql: true
+    show-sql: false
+    generate-ddl: false
+
+dgs:
+  graphql:
+    extensions:
+      scalars:
+        numbers:
+          enabled: true
+        time-dates:
+          enabled: true
+    schema-locations:
+      - classpath*:schema/**/*.graphql*

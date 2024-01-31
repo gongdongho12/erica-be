@@ -1,0 +1,29 @@
+server:
+  port: 9090
+
+spring:
+  graphql:
+    graphiql.enabled: true
+    schema.printer.enabled: false
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      org:
+        hibernate:
+          format_sql: true
+      hibernate:
+        default_batch_fetch_size: 100
+        show_sql: false
+        format_sql: true
+    show-sql: false
+    generate-ddl: false
+
+  config:
+    activate:
+      on-profile: prod

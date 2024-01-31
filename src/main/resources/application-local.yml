@@ -1,0 +1,20 @@
+spring:
+  graphql:
+    graphiql.enabled: true
+    schema.printer.enabled: true
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      org:
+        hibernate:
+          format_sql: true
+
+logging.level:
+  org.hibernate.SQL: debug
