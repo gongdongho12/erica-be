@@ -8,6 +8,7 @@ COPY ./src/ $WORK/src
 WORKDIR $WORK
 
 RUN apt-get update && apt-get install -y dos2unix && dos2unix gradlew
+RUN chmod +x gradlew
 RUN ./gradlew clean bootJar --parallel --no-daemon
 
 FROM bellsoft/liberica-openjdk-debian:17
