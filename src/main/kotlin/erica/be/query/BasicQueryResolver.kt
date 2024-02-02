@@ -14,4 +14,9 @@ class BasicQueryResolver {
     fun plus(a: Int, b: Int): Int {
         return a + b
     }
+
+    @DgsQuery
+    fun minus(a: Int, b: Int): Int {
+        return a - b
+    }
 }

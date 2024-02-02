@@ -11,4 +11,7 @@ type Query {
 
     """ 간단한 덧셈 """
     plus(a: Int!, b: Int!): Int!
+
+    """ 간단한 뺄셈 """
+    minus(a: Int!, b: Int!): Int!
 }
